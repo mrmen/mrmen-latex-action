@@ -1,7 +1,5 @@
 #!/bin/sh
-if [ "${INPUT_ARTIFACT}" == true ]; then
-  mkdir Documents
-fi
+mkdir Documents
 
 declare -A failed
 i=0
@@ -18,8 +16,6 @@ do
     cd $w_dir
 done
 
-if [ "${INPUT_ARTIFACT}" == true ]; then
-    tar -czvf Documents.tar.gz Documents/*
-fi
+tar -czvf Documents.tar.gz Documents/*
 
 exit 0
