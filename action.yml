@@ -1,0 +1,9 @@
+name: 'mrmen-latex-action'
+author: 'Thomas Etcheverria <tetcheve@gmail.com>'
+description: 'Latex multicompiler'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  color: 'orange'
+  icon: 'alert-octagon'
