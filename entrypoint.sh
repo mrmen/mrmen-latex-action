@@ -8,11 +8,12 @@ i=0
 w_dir=$(pwd)
 for file in $(find . | grep "main.tex")
 do
-    cd $(basename $file)
-    docName=$(basename $file | sed '/\/[^\/]+//g')
+    dossier=$(dirname $file)
+    cd $dossier
+    docName=$(dirname $dossier)
     latexmk -pdf -interaction=nonstopmode main.tex
     if [ "${INPUT_ARTIFACT}" == true ]; then
-          mv main.pdf $w_dir"/Documents/"$docName.pdf
+          mv main.pdf ${w_dir}/Documents/$docName.pdf
     fi
     cd $w_dir
 done
